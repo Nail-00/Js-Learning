@@ -7,41 +7,29 @@ if ( a%2 ==0 ) {
 
 
 let b =25;
-if (b < 18){
+if (b >= 18){
     console.log("resitsiniz");
-}else(b >= 18);{
+}else{
     console.log("resit degilsiniz");
 }
 
 let c = 5;
-switch (c) {
-    case 1:
-        console.log("Pazartesi");
-        break;
-    case 2:
-        console.log("Salı");
-        break;
-    case 3:
-        console.log("Çarşamba");
-        break;
-    case 4:
-        console.log("Perşembe");
-        break;
-    case 5:
-        console.log("Cuma");
-        break;
-    case 6:
-        console.log("Cumartesi");
-        break;
-    case 7:
-        console.log("Pazar");
-        break;
-    default:
-        console.log("Hatalı giriş");
-        break;
+if (c >= 1 && c <= 7) {
+    switch (c) {
+        case 1: console.log("Pazartesi"); break;
+        case 2: console.log("Salı"); break;
+        case 3: console.log("Çarşamba"); break;
+        case 4: console.log("Perşembe"); break;
+        case 5: console.log("Cuma"); break;
+        case 6: console.log("Cumartesi"); break;
+        case 7: console.log("Pazar"); break;
+    }
+} else {
+    console.log("Hatalı giriş, lütfen 1-7 arasında bir sayı girin.");
 }
 
-let Notlar = "C";
+
+let Notlar = "c".toUpperCase;
 
 switch (Notlar) {
     case "A":
