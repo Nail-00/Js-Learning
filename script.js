@@ -1,35 +1,31 @@
-let toplam = 0;
-for (let a = 1; a <= 50; a++) {
-  toplam += a;
-}
-console.log(toplam);
-
-
-let sayi = Number(prompt("Bir sayı girin:"));
-let asal = true;
-
-if (sayi > 2) {
-    
-     for (let i = 2; i < sayi; i++) {
-        if (sayi % i === 0) {
-            asal = false; // Eğer tam bölünürse asal değildir
-            break;
-        }
-    }
-} else {
-   asal = false; // 2'den küçük sayılar asal olamaz
+let a = Number(prompt("Bir sayı giriniz: "));
+let b = Number(prompt("Bir sayı daha giriniz: "));
+function toplam(a,b) {
+    return a + b;
 }
 
-if (asal) {
-    console.log(sayi + " bir asal sayıdır.");
-} else {
-    console.log(sayi + " asal değildir.");
+let sonuc1 = toplam(a,b);
+console.log(sonuc1); 
+
+
+
+
+
+function kare(sayi2) {
+    return sayi2 * sayi2;
 }
 
+let sayi2 = Number(prompt("Bir sayı giriniz: "));
+let sonuc2 = Kare(sayi2);
+console.log(sonuc2); 
 
-let yas;
-do {
-    yas = prompt("Yaşınızı giriniz: ");
-    yas = Number(yas);
-} while (isNaN(yas) || yas <18);
-console.log("Yaşınız: " + yas);
+
+
+function yasHesapla(dogumYili) {
+    let suankiYil = new Date().getFullYear(); // Güncel yılı al
+    return suankiYil - dogumYili;
+}
+
+let dogumYili = Number(prompt("Doğum yılınızı giriniz: "));
+let yas = yasHesapla(dogumYili);
+console.log("Yaşınız:", yas);
