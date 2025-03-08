@@ -1,21 +1,34 @@
-for ( let a =1; a <100; a++){
-    if (a % 3 == 0){
-        console.log(a);
+let toplam = 0;
+for (let a = 1; a <= 50; a++) {
+  toplam += a;
+}
+console.log(toplam);
+
+
+let sayi = Number(prompt("Bir sayı girin:"));
+let asal = true;
+
+if (sayi < 2) {
+    asal = false; // 2'den küçük sayılar asal olamaz
+} else {
+    for (let i = 2; i < sayi; i++) {
+        if (sayi % i === 0) {
+            asal = false; // Eğer tam bölünürse asal değildir
+            break;
+        }
     }
 }
 
-let b = 5;
-let toplam = 1;
-while (b > 0) {
-  toplam *= b;
-  b--;
+if (asal) {
+    console.log(sayi + " bir asal sayıdır.");
+} else {
+    console.log(sayi + " asal değildir.");
 }
-  console.log(toplam);
 
-let c;
+
+let yas;
 do {
-    c = prompt("cikmak icin exit yaziniz").toLowerCase();
-    
-} while (c !== "exit");
-
-console.log("cikildi");
+    yas = prompt("Yaşınızı giriniz: ");
+    yas = Number(yas);
+} while (isNaN(yas) || yas <18);
+console.log("Yaşınız: " + yas);
