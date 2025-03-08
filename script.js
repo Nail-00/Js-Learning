@@ -1,25 +1,21 @@
-let toplam = 0;
-
-for (let i = 10; i <= 20; i++) {
-    toplam += i; // toplam = toplam + i
+for ( let a =1; a <100; a++){
+    if (a % 3 == 0){
+        console.log(a);
+    }
 }
-
-console.log("10 ile 20 arasındaki sayıların toplamı:", toplam);
-
 
 let b = 5;
-
-while (b > 1) {
-    b--;
-    console.log(b);
+let toplam = 1;
+while (b > 0) {
+  toplam *= b;
+  b--;
 }
+  console.log(toplam);
 
-
-let sayi;
-
+let c;
 do {
-    sayi = prompt("Lütfen 10 ile 50 arasında bir sayı girin:");
-    sayi = Number(sayi); // Kullanıcının girdiğini sayıya çeviriyoruz
-} while (sayi < 10 || sayi > 50); // Eğer sayı 10 ile 50 arasında değilse, tekrar sorar
+    c = prompt("cikmak icin exit yaziniz").toLowerCase();
+    
+} while (c !== "exit");
 
-console.log("Tebrikler! Geçerli bir sayı girdiniz:", sayi);
+console.log("cikildi");
