@@ -1,22 +1,35 @@
-function ortalama(a,b,c) {
-    return (a+b+c)/3;
+let a = [1,2,4,5,3,9,6,0,11];
+
+for (let sayi of a){
+    if(sayi % 2 == 0){
+        console.log(sayi);
+    }
+
 }
-let a = 3;
-let b = 4;
-let c = 5;
-console.log(ortalama(a,b,c)); 
 
 
-function buyukBul(x,y){
-   return  Math.max(x, y);
+let names = [];
+for (let i = 0; i < 3; i++) {
+    names.unshift(prompt("Bir isim girin:"));
 }
-let x = 4;
-let y = 6;
-console.log(buyukBul(x,y));
+console.log("Orijinal:", names);
+console.log("Ters Çevrilmiş:", names.reverse());
 
 
-function faktoriyel(n) {
-    return n === 0 ? 1 : n * faktoriyel(n - 1);
+
+let enBuyuk = [15,42,55,35,13,39,46,20,11];
+function enBuyukBul(enBuyuk){
+    let max = enBuyuk[0];
+    for(let i = 0; i < enBuyuk.length; i++){
+        if(enBuyuk[i] > max){
+            max = enBuyuk[i];
+        }
+    }
+    return max;
 }
-let n = 5;
-console.log(faktoriyel(n));
+console.log(enBuyukBul(enBuyuk));
+
+function enBuyukBul(arr) {
+    return Math.max(...arr);
+}
+console.log(enBuyukBul(enBuyuk));
