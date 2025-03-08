@@ -1,35 +1,45 @@
-let a = [1,2,4,5,3,9,6,0,11];
-
-for (let sayi of a){
-    if(sayi % 2 == 0){
-        console.log(sayi);
-    }
-
-}
-
-
-let names = [];
-for (let i = 0; i < 3; i++) {
-    names.unshift(prompt("Bir isim girin:"));
-}
-console.log("Orijinal:", names);
-console.log("Ters Çevrilmiş:", names.reverse());
-
-
-
-let enBuyuk = [15,42,55,35,13,39,46,20,11];
-function enBuyukBul(enBuyuk){
-    let max = enBuyuk[0];
-    for(let i = 0; i < enBuyuk.length; i++){
-        if(enBuyuk[i] > max){
-            max = enBuyuk[i];
+// arraydeki tek sayilarin toplamini bulan fonksiyon
+function tekSayilariTopla(dizi) {
+    let toplam = 0;
+    for (let sayi of dizi) {
+        if (sayi % 2 !== 0) { // Eğer tek sayıysa
+            toplam += sayi;
         }
     }
-    return max;
+    return toplam;
 }
-console.log(enBuyukBul(enBuyuk));
 
-function enBuyukBul(arr) {
-    return Math.max(...arr);
+// Örnek kullanım
+let sayilar = [10, 15, 3, 8, 7, 12, 21, 5];
+console.log(tekSayilariTopla(sayilar)); // Çıktı: 51 (15+3+7+21+5)
+
+// arrayda kaç tane çift ve tek sayı olduğunu bulan kod
+function ciftVeTekSayilariBul(dizi) {
+    let ciftSayac = 0;
+    let tekSayac = 0;
+
+    for (let sayi of dizi) {
+        if (sayi % 2 === 0) {
+            ciftSayac++;
+        } else {
+            tekSayac++;
+        }
+    }
+
+    console.log(`Çift Sayıların Sayısı: ${ciftSayac}`);
+    console.log(`Tek Sayıların Sayısı: ${tekSayac}`);
 }
-console.log(enBuyukBul(enBuyuk));
+
+// Örnek kullanım
+let say = [4, 7, 2, 9, 10, 13, 16, 21, 30];
+ciftVeTekSayilariBul(say);
+
+
+
+
+
+
+// arraydeki yazilari alfabetik siraya dizmek
+
+let c =["c","d","a","f","g","b","e"];
+console.log(c.sort());
