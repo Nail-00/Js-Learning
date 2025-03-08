@@ -1,45 +1,25 @@
-// arraydeki tek sayilarin toplamini bulan fonksiyon
-function tekSayilariTopla(dizi) {
-    let toplam = 0;
-    for (let sayi of dizi) {
-        if (sayi % 2 !== 0) { // Eğer tek sayıysa
-            toplam += sayi;
-        }
-    }
-    return toplam;
-}
+// array.map() metodu
+let sayilar = [2,3,4,5];
+let kup = sayilar.map(ss => Math.pow(ss,3));
+console.log(kup);
 
-// Örnek kullanım
-let sayilar = [10, 15, 3, 8, 7, 12, 21, 5];
-console.log(tekSayilariTopla(sayilar)); // Çıktı: 51 (15+3+7+21+5)
+let sayilar2 = [2,3,4,5];
+let kup2 = sayilar2.map(function(ss){
+  return ss*ss*ss;
+});
+console.log(kup2); 
 
-// arrayda kaç tane çift ve tek sayı olduğunu bulan kod
-function ciftVeTekSayilariBul(dizi) {
-    let ciftSayac = 0;
-    let tekSayac = 0;
+// array.filter() metodu
+let a = [2,3,4,5];
+let tek = a.filter(b => b%2 !== 0);
+console.log(tek);
 
-    for (let sayi of dizi) {
-        if (sayi % 2 === 0) {
-            ciftSayac++;
-        } else {
-            tekSayac++;
-        }
-    }
+// array.reduce() metodu
+let c = [2,3,4,5];
+let enBuyuk =c.reduce((d,e) => Math.max(d,e),-Infinity );
+console.log(enBuyuk);
 
-    console.log(`Çift Sayıların Sayısı: ${ciftSayac}`);
-    console.log(`Tek Sayıların Sayısı: ${tekSayac}`);
-}
-
-// Örnek kullanım
-let say = [4, 7, 2, 9, 10, 13, 16, 21, 30];
-ciftVeTekSayilariBul(say);
-
-
-
-
-
-
-// arraydeki yazilari alfabetik siraya dizmek
-
-let c =["c","d","a","f","g","b","e"];
-console.log(c.sort());
+// array.find() metodu
+let f = [2,3,4,5];
+let bul = f.find(g => g%2 == 0);
+console.log(bul);
